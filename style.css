@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+body{
+    background-color: #f7f8fc;
+    min-height: 100vh;
+    height: 100%;
+    display: grid;
+    grid-template-columns: clamp(220px 20% 280px) 1fr;
+}
+main{
+    grid-column-start: 2;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: repeat(8,1fr);
+    max-height: 100%;
+    padding: 0 1.5rem 1.5rem;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar{
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    background: #363740;
+    color: #a4a6b3;
+    padding: 0.35rem;
+    user-select: none;
+    position: relative;
+}
+.sidebar i{
+    color: #60626e;
+    margin-right: 1.25rem;
+    margin-left: 0.75rem;
+    min-width: 25px;
+}
+.sidebar li{
+   display: flex;
+   align-items: center;
+   padding: 1.1rem;
+   font-weight: 400;
+}
+.sidebar li:hover {
+    background: #3e4049;
+    color: #dde2ff;
+    border-left: 4px solid #dde2ff;
+    padding-left: calc(1.1rem - 4px);
+}
+
+.sidebar li:hover > i {
+    color: #dde2ff;
+}
+
+.sidebar-nav > ul:first-child {
+    padding: 0.5rem 0 0.75rem;
+}
+.logo-container {
+    padding: 1.25rem;
+    padding-bottom: 1.75rem;
+    position: relative;
+ }
+
+.logo-container img{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.close-btn{
+    position: absolute;
+    top: 0.20rem;
+    right: -1.5rem;
+    font-size: 1.5rem;
+    transition: transform 300ms ease, color 300ms ease;
+    display: none !important;
+}
+.logo-container > i:hover {
+    color: rgb(237, 113, 113);
+    transform: scale(1.075);
+}
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hamburger {
+    display: none;
+    position: absolute;
+    left: 1.5rem;
+    top: 1.85rem;
+    cursor: pointer;
+}
+.hamburger > div {
+    width: 25px;
+    height: 3px;
+    background: #252733;
+    margin: 6px 0;
+    border-radius: 2px;
+}
+.fill-bottom {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    left: 0;
+    bottom: -70px;
+    background: #363740;
+ }
+
+@media (min-height:620px) {
+    .sidebar{
+        position: sticky;
+        top: 0;
+        left: 0;
+        max-height: 100vh;
+        min-height: min-content;
+    }
+    
+}
